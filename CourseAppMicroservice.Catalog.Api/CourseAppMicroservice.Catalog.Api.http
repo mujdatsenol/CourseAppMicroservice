@@ -1,0 +1,77 @@
+@HostAddress = http://localhost:5049
+@Root = /api
+@Version = /v1.0
+@Category = /categories
+@Course = /courses
+@CategoryId = 08dd0962-700e-a8c8-26b0-4d290a4f0000
+@CourseId = 08dd0962-7028-fa5c-26b0-4d290a4f0000
+@UserId = bdd17fde-e5f1-4783-98ee-c831eb5d5098
+
+POST {{HostAddress}}{{Root}}{{Version}}{{Category}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Test Category"
+}
+
+###
+
+GET {{HostAddress}}{{Root}}{{Version}}{{Category}}
+Accept: application/json
+
+###
+
+GET {{HostAddress}}{{Root}}{{Version}}{{Category}}/{{CategoryId}}
+Accept: application/json
+
+###
+
+POST {{HostAddress}}{{Root}}{{Version}}{{Course}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Test Course",
+  "description": "Course description",
+  "price": 100,
+  "imageUrl": "<empty>",
+  "categoryId": "{{CategoryId}}"
+}
+
+###
+
+PUT {{HostAddress}}{{Root}}{{Version}}{{Course}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "{{CourseId}}",
+  "name": "Test Update Course",
+  "description": "Course update description",
+  "price": 120,
+  "imageUrl": "<empty>",
+  "categoryId": "{{CategoryId}}"
+}
+
+###
+
+GET {{HostAddress}}{{Root}}{{Version}}{{Course}}
+Accept: application/json
+
+###
+
+GET {{HostAddress}}{{Root}}{{Version}}{{Course}}/{{CourseId}}
+Accept: application/json
+
+###
+
+DELETE {{HostAddress}}{{Root}}{{Version}}{{Course}}/08dd0972-ccf1-9068-26b0-4d290a4f0000
+Accept: application/json
+
+###
+
+GET {{HostAddress}}{{Root}}{{Version}}{{Course}}/user/{{UserId}}
+Accept: application/json
+
+###

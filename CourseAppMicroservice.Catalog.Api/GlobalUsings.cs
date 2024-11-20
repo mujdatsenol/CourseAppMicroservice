@@ -1,0 +1,9 @@
+global using AutoMapper;
+global using CourseAppMicroservice.Catalog.Api.Repositories;
+global using CourseAppMicroservice.Shared;
+global using CourseAppMicroservice.Shared.Extensions;
+global using FluentValidation;
+global using MassTransit;
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using System.Net;
